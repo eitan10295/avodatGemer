@@ -22,6 +22,8 @@ import java.util.ArrayList;
 
 public class ProcessesActivity extends AppCompatActivity implements ProcessAdapter.finisher{
 
+    //
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
