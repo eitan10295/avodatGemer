@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#40424D"
+    android:orientation="horizontal">
+
+    <FrameLayout
+        android:id="@+id/camera_preview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="120dp"
+        android:layout_weight="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible">
+
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/lastpicP"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/me"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/camera_preview"
+        app:layout_constraintEnd_toEndOf="@+id/camera_preview"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/camera_preview" />
+
+    <ImageView
+        android:id="@+id/takePic"
+        android:layout_width="126dp"
+        android:layout_height="134dp"
+        android:onClick="takePic"
+        android:src="@drawable/camera_circle"
+        app:layout_constraintBottom_toBottomOf="@+id/camera_preview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/rotatepic"
+        android:layout_width="80dp"
+        android:layout_height="88dp"
+        android:onClick="rotatePic"
+        android:src="@drawable/camera_flip"
+        app:layout_constraintBottom_toBottomOf="@+id/takePic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/takePic"
+        app:layout_constraintTop_toTopOf="@+id/takePic" />
+
+    <SeekBar
+        android:id="@+id/seekBar2"
+        android:layout_width="132dp"
+        android:layout_height="33dp"
+        app:layout_constraintBottom_toBottomOf="@+id/takePic"
+        app:layout_constraintEnd_toStartOf="@+id/takePic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/takePic" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
