@@ -29,15 +29,14 @@ public class ProcessesActivity extends AppCompatActivity implements ProcessAdapt
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_processes);
 
-        ActivityCompat.requestPermissions(ProcessesActivity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
+
         ActivityCompat.requestPermissions(ProcessesActivity.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},1);
-        ActivityCompat.requestPermissions(ProcessesActivity.this, new String[]{Manifest.permission.CAMERA},1);
+
 
 
         final ArrayList<Process> processes= new ArrayList<>();
         File file = getExternalFilesDir(null);
         File f1=new File(file.getAbsolutePath() + "/avodatgemer");
-        Log.d("aaa", file.getAbsolutePath() + "/avodatgemer");
         File[] files = f1.listFiles();
         if(files!=null){
             for(int i = 0; i<files.length; i ++){
@@ -77,10 +76,9 @@ public class ProcessesActivity extends AppCompatActivity implements ProcessAdapt
         bY.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(Integer.parseInt(editText.getText().toString())==12345){
+                if(editText.getText().toString()!=""&&Integer.parseInt(editText.getText().toString())==12345){
                     deleteProcess(p1);
                 }
-                Log.d("123123123",editText.getText().toString());
                 SystemClock.sleep(500);
                 d1.cancel();
                 finish();
@@ -92,7 +90,6 @@ public class ProcessesActivity extends AppCompatActivity implements ProcessAdapt
     private Bitmap loadFile(Pictures p1){
         File file = getExternalFilesDir(null);
         String path =file.getAbsolutePath() + "/avodatgemer/" + p1.getName() +"/" + p1.getName() + "-" + p1.getId() + "-" + p1.getDate();
-        Log.d("123" ,path);
         return BitmapFactory.decodeFile(path);
     }
     public void deleteProcess(Process p1){

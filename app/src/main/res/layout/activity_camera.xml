@@ -7,32 +7,27 @@
     android:background="#40424D"
     android:orientation="horizontal">
 
-    <FrameLayout
-        android:id="@+id/camera_preview"
+    <TextureView
+        android:id="@+id/textureView"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="120dp"
-        android:layout_weight="1"
+        android:layout_height="500dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:visibility="visible">
-
-    </FrameLayout>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/lastpicP"
-        android:layout_width="0dp"
+        android:layout_width="50dp"
         android:layout_height="0dp"
         android:scaleType="fitXY"
         android:src="@drawable/me"
         android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/camera_preview"
-        app:layout_constraintEnd_toEndOf="@+id/camera_preview"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/camera_preview" />
+        app:layout_constraintBottom_toBottomOf="@+id/textureView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textureView"
+        app:layout_constraintTop_toTopOf="@+id/textureView" />
 
     <ImageView
         android:id="@+id/takePic"
@@ -40,8 +35,9 @@
         android:layout_height="134dp"
         android:onClick="takePic"
         android:src="@drawable/camera_circle"
-        app:layout_constraintBottom_toBottomOf="@+id/camera_preview"
+        app:layout_constraintBottom_toBottomOf="@+id/textureView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView

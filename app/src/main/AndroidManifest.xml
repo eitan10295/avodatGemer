@@ -7,6 +7,8 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.Wirte_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-feature android:name="android.hardware.camera2.full"/>
 
     <application
         android:requestLegacyExternalStorage="true"
@@ -29,6 +31,7 @@
         </activity>
         <activity android:name=".CameraActivity" />
 
+        <receiver android:name=".RemainderBroadcast"/>
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

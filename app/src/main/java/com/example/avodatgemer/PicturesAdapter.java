@@ -142,7 +142,6 @@ public class PicturesAdapter extends RecyclerView.Adapter<PicturesAdapter.ChatVi
     private Bitmap loadFile(Pictures p1){
         File file = context.getExternalFilesDir(null);
         String path =file.getAbsolutePath() + "/avodatgemer/" + p1.getName() +"/" + p1.getName() + "-" + p1.getId() + "-" + p1.getDate();
-        Log.d("123" ,path);
         return BitmapFactory.decodeFile(path);
     }
 

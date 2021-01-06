@@ -49,7 +49,7 @@ public class FinishActivity extends AppCompatActivity {
         picker1.setMaxValue(19);
         picker1.setMinValue(0);
         picker1.setDisplayedValues(pickervals);
-        picker1.setWrapSelectorWheel(!!!!!!!!false);
+        picker1.setWrapSelectorWheel(false);
     }
 
     public void createVideo(View view) {
@@ -75,7 +75,6 @@ public class FinishActivity extends AppCompatActivity {
             double delay = Double.parseDouble(pickervals[picker1.getValue()]);
             AndroidSequenceEncoder encoder;
             encoder = new AndroidSequenceEncoder(out, Rational.R(10, (int)(delay*10)));
-            Log.d("364",10/(int)(delay*10)+"");
             for (Bitmap bitmap : bitmaps1) {
                 encoder.encodeImage(bitmap);
             }
@@ -132,7 +131,6 @@ public class FinishActivity extends AppCompatActivity {
     private Bitmap loadFile(Pictures p1){
         File file = getExternalFilesDir(null);
         String path =file.getAbsolutePath() + "/avodatgemer/" + p1.getName() +"/" + p1.getName() + "-" + p1.getId() + "-" + p1.getDate();
-        Log.d("123" ,path);
         return BitmapFactory.decodeFile(path);
     }
     private void newFolder(String processName){

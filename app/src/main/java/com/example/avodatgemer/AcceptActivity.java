@@ -38,7 +38,6 @@ public class AcceptActivity extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
         process = new Process(bundle.getString("name"), Integer.parseInt(bundle.getString("num")));
-        Log.d("123", process.getPicNum()+"");
         Intent intent = getIntent();
         File file = getExternalFilesDir(null);;
         File f1=new File(file.getAbsolutePath() + "/avodatgemer/" + process.getName());
